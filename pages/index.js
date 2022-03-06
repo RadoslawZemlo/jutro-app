@@ -48,7 +48,7 @@ export default function Home() {
       } ${screen === 1 && "bg-second"} ${screen === 2 && "bg-third"}`}
     >
       <div
-        className={`p-2 cursor-pointer transition ease-in-out duration-1500 ${
+        className={`p-2 cursor-pointer lg:px-12 transition ease-in-out duration-1500 ${
           screen === 2 && "text-black"
         }`}
         onClick={handleLeft}
@@ -56,9 +56,9 @@ export default function Home() {
         &lt;
       </div>
 
-      <div className="mx-6 h-full overflow-hidden">
+      <div className="mx-6 h-full overflow-hidden lg:flex items-center">
         <div
-          className={`relative transition duration-1500 ${
+          className={`relative lg:mx-12 transition duration-1500 ${
             screen === 1 ? "translate-y-72 lg:translate-y-0" : ""
           }`}
         >
@@ -85,8 +85,9 @@ export default function Home() {
             nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
             tellus elit sed risus.
           </p>
+
           <input
-            className={`cursor-pointer py-2 px-4 transition-all ease-in-out duration-1500 ${
+            className={`cursor-pointer py-2 px-4 transition ease-in-out duration-1500 ${
               screen === 1 ? "bg-first" : "bg-second"
             }`}
             type="submit"
@@ -95,7 +96,7 @@ export default function Home() {
         </div>
 
         <div
-          className={`w-full relative top-36 transition-all duration-1500 ${
+          className={`w-full relative top-36 lg:top-72 min-w-40 transition-all duration-1500 ${
             screen === 1 ? "translate-y-[-900px] lg:translate-y-[-550px]" : ""
           }`}
         >

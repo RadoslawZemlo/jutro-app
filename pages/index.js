@@ -1,10 +1,33 @@
+import { useState } from "react";
 import Image from "next/image";
 import img0 from "../public/img/jutro-img-0.png";
 
 export default function Home() {
+  const [screen, setScreen] = useState(0);
+
+  const handleLeft = () => {
+    if (screen === 0) {
+      setScreen(2);
+    } else {
+      setScreen(screen - 1);
+    }
+  };
+
+  const handleRight = () => {
+    if (screen === 2) {
+      setScreen(0);
+    } else {
+      setScreen(screen + 1);
+    }
+  };
+
+  console.log(screen);
+
   return (
     <div className="bg-[#26c299] w-screen h-screen text-white flex items-center">
-      <div className="p-2 cursor-pointer">&lt;</div>
+      <div className="p-2 cursor-pointer" onClick={handleLeft}>
+        &lt;
+      </div>
 
       <div className="mx-6 h-full overflow-hidden">
         <h1 className="text-2xl font-bold py-5">Pobierz aplikację</h1>
@@ -26,7 +49,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={`p-2 cursor-pointer`}>&gt;</div>
+      <div className="p-2 cursor-pointer" onClick={handleRight}>
+        &gt;
+      </div>
     </div>
   );
 }

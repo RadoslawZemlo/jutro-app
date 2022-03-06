@@ -35,24 +35,36 @@ export default function Home() {
       </div>
 
       <div className="mx-6 h-full overflow-hidden">
-        <div className="mt-10">
-          <Image src={icon0} alt="icon-0" width={120} height={120} />
+        <div
+          className={`relative transition duration-1500 ${
+            screen === 1 ? "translate-y-72 lg:translate-y-0" : ""
+          }`}
+        >
+          <div className="mt-10">
+            <Image src={icon0} alt="icon-0" width={120} height={120} />
+          </div>
+          <h1 className="text-2xl font-bold py-5">Pobierz aplikację</h1>
+
+          <p className="text-sm mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
+            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
+            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
+            tellus elit sed risus.
+          </p>
+          <input
+            className={`cursor-pointer py-2 px-4 transition-all ease-in-out duration-1500 ${
+              screen === 1 ? "bg-first" : "bg-second"
+            }`}
+            type="submit"
+            value="Pobierz aplikację"
+          />
         </div>
-        <h1 className="text-2xl font-bold py-5">Pobierz aplikację</h1>
 
-        <p className="text-sm mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus.
-        </p>
-        <input
-          className="cursor-pointer py-2 px-4 bg-[#0a40a1]"
-          type="submit"
-          value="Pobierz aplikację"
-        />
-
-        <div className="w-full relative top-28">
+        <div
+          className={`w-full relative top-36 transition-all duration-1500 ${
+            screen === 1 ? "translate-y-[-900px] lg:translate-y-[-550px]" : ""
+          }`}
+        >
           <Image src={img0} alt="img" />
         </div>
       </div>

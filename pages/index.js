@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import img0 from "../public/img/jutro-img-0.png";
+import icon0 from "../public/icon/icon-0.png";
 
 export default function Home() {
   const [screen, setScreen] = useState(0);
@@ -24,12 +25,19 @@ export default function Home() {
   console.log(screen);
 
   return (
-    <div className="bg-[#26c299] w-screen h-screen text-white flex items-center">
+    <div
+      className={`w-screen h-screen text-white flex items-center transition ease-in-out duration-1500 ${
+        screen === 0 && "bg-first"
+      } ${screen === 1 && "bg-second"} ${screen === 2 && "bg-third"}`}
+    >
       <div className="p-2 cursor-pointer" onClick={handleLeft}>
         &lt;
       </div>
 
       <div className="mx-6 h-full overflow-hidden">
+        <div className="mt-10">
+          <Image src={icon0} alt="icon-0" width={120} height={120} />
+        </div>
         <h1 className="text-2xl font-bold py-5">Pobierz aplikację</h1>
 
         <p className="text-sm mb-6">

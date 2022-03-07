@@ -48,7 +48,7 @@ export default function Home() {
       } ${screen === 1 && "bg-second"} ${screen === 2 && "bg-third"}`}
     >
       <div
-        className={`p-2 cursor-pointer lg:px-12 transition ease-in-out duration-1500 ${
+        className={`p-2 cursor-pointer md:text-4xl md:p-6 lg:text-2xl lg:px-12 transition ease-in-out duration-1500 ${
           screen === 2 && "text-black"
         }`}
         onClick={handleLeft}
@@ -59,14 +59,16 @@ export default function Home() {
       <div className="mx-6 h-full overflow-hidden lg:flex items-center">
         <div
           className={`relative lg:mx-12 transition duration-1500 ${
-            screen === 1 ? "translate-y-72 lg:translate-y-0" : ""
+            screen === 1
+              ? "translate-y-72 md:translate-y-[600px] lg:translate-y-0"
+              : ""
           }`}
         >
-          <div className="mt-10">
-            <Image src={icon} alt="icon-0" width={120} height={120} />
+          <div className="mt-10 w-28 md:w-40 md:mt-16 lg:w-28">
+            <Image src={icon} alt="icon-0" />
           </div>
           <h1
-            className={`text-2xl font-bold py-5 transition ease-in-out duration-1500 ${
+            className={`text-2xl font-bold py-5 md:text-5xl lg:text-2xl transition ease-in-out duration-1500 ${
               screen === 2 && "text-black"
             }`}
           >
@@ -76,7 +78,7 @@ export default function Home() {
           </h1>
 
           <p
-            className={`text-sm mb-6 transition ease-in-out duration-1500 ${
+            className={`mb-6 md:text-2xl md:mb-12 lg:text-base transition ease-in-out duration-1500 ${
               screen === 2 && "text-black"
             }`}
           >
@@ -96,16 +98,18 @@ export default function Home() {
         </div>
 
         <div
-          className={`w-full relative top-36 lg:top-72 min-w-40 transition-all duration-1500 ${
-            screen === 1 ? "translate-y-[-900px] lg:translate-y-[-550px]" : ""
+          className={`w-full relative top-40 md:max-w-[539px] md:mx-auto lg:top-72 lg:min-w-40 transition-all duration-1500 ${
+            screen === 1
+              ? "translate-y-[-900px] md:translate-y-[-1300px] lg:translate-y-[-550px]"
+              : ""
           }`}
         >
-          <Image src={imgSrc} alt="img" />
+          <Image src={imgSrc} alt="img" width={539} height={1171.8} />
         </div>
       </div>
 
       <div
-        className={`p-2 cursor-pointer lg:px-12 transition ease-in-out duration-1500 ${
+        className={`p-2 cursor-pointer md:text-4xl md:p-6 lg:text-2xl lg:px-12 transition ease-in-out duration-1500 ${
           screen === 2 && "text-black"
         }`}
         onClick={handleRight}
